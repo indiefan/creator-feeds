@@ -1,0 +1,6 @@
+#!/bin/bash
+
+docker stop creatorfeed-server
+docker build -t creatorfeed-server .
+docker rm creatorfeed-server
+docker run -d --name creatorfeed-server -p 8000:80 creatorfeed-server
