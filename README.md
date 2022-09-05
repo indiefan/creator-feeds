@@ -12,7 +12,8 @@ Selectors sections are a collection of arbitrary named CSS selector strings that
 `title`, `link`, and `date` are required to be specified, either directly as selectors, or else as [Genshi](https://genshi.edgewall.org/wiki/Documentation/0.6.x/templates.html#python-api) templated strings in the Item Section. The text and attributes from all selectors are available to the templates.
 
 e.g. 
-```[Ian_Cohen]
+```
+[Ian_Cohen]
 	[[Pitchfork Album Reviews]]
 	url = https://pitchfork.com/staff/ian-cohen/albumreviews/
 		[[[item]]]
@@ -34,7 +35,8 @@ e.g.
 			[[[[selectors]]]]
 			title = .entry-title > a
 			link = .entry-title > a
-			date = .published```
+			date = .published
+```
 
 # Local Development
 To start the server locally, first install the requirements (preferably in a virtualenv) with `pip install requirements.txt` then run the startup script _from the app directory_ (running it from elsewhere would require incompatible modulization with the docker deployment method).
