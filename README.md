@@ -39,10 +39,12 @@ e.g.
 ```
 
 # Local Development
-To start the server locally, first install the requirements (preferably in a virtualenv) with `pip install requirements.txt` then run the startup script _from the app directory_ (running it from elsewhere would require incompatible modulization with the docker deployment method).
+To start the server locally, first install the requirements (preferably in a virtualenv) with `pip install requirements.txt` then run the startup script _from the app directory_ (running it from elsewhere would require modulization that's incompatible with the docker deployment method).
+
 `cd app && ./startup`
 
 The app should now be accessible e.g.
+
 `http://localhost:8000/creator/Ian_Cohen` and
 `http://localhost:8000/feed/Ian_Cohen.rss.xml`
 
