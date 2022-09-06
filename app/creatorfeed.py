@@ -35,7 +35,7 @@ class CreatorFeed:
         for item in self.creator_feed_items:
             fe = fg.add_entry()
             fe.title(item['title'])
-            fe.link(href=item['link'], rel='alternate')
+            fe.link(href=item['url'], rel='alternate')
             fe.published(item['published'])
 
         return fg.rss_str()
@@ -72,7 +72,7 @@ class Feed:
                 else:
                     selected_content[name] = ''
 
-            for attr in ('title', 'link'):
+            for attr in ('title', 'url'):
                 if attr in self.config['item']:
                     # Template exists for the attribute, so format it from selected content
                     template = TextTemplate(self.config['item'][attr])
