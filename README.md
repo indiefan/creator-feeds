@@ -9,7 +9,7 @@ Item sections require a `selector`, which is a CSS selector string compatible wi
 
 Selectors sections are a collection of arbitrary named CSS selector strings that will be parsed for each item.
 
-`title`, `link`, and `date` are required to be specified, either directly as selectors, or else as [Genshi](https://genshi.edgewall.org/wiki/Documentation/0.6.x/templates.html#python-api) templated strings in the Item Section. The text and attributes from all selectors are available to the templates.
+`title`, `url`, and `date` are required to be specified, either directly as selectors, or else as [Genshi](https://genshi.edgewall.org/wiki/Documentation/0.6.x/templates.html#python-api) templated strings in the Item Section. The text and attributes from all selectors are available to the templates.
 
 e.g. 
 ```
@@ -20,11 +20,11 @@ e.g.
 		selector = .result-item
 		timezone = America/Los_Angeles
 		title = ${band} - ${album}
-		link = https://pitchfork.com${short_link_attrs.href}
+		url = https://pitchfork.com${link_attrs.href}
 			[[[[selectors]]]]
 			band = .review .review__title-artist > li
 			album = .review .review__title-album > em
-			short_link = .review > a
+			link = .review > a
 			date = .pub-date
 
 	[[Uproxx Articles]]
@@ -32,6 +32,7 @@ e.g.
 		[[[item]]]
 		selector = .grid-area .grid-item
 		timezone = America/Los_Angeles
+		url = ${link_attrs.href}
 			[[[[selectors]]]]
 			title = .entry-title > a
 			link = .entry-title > a
